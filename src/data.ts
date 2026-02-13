@@ -2,34 +2,45 @@
 //  Valentine's Special — All editable content
 // ─────────────────────────────────────────────
 
+import cutebear from "./assets/cutebear.png";
+import thumbsup from "./assets/thumbsup.webp";
+import thumbsup2 from "./assets/Thumbsup2.webp";
+
 // ── Phase 2: Relationship Wrapped Slides ──
 export const wrappedSlides = [
   {
-    stat: "4,300",
+    stat: "31,203",
     unit: "hours",
-    text: "being the favorite person.",
+    text: "being the favorite person. (its the time since 25 July 2022 ;)",
     emoji: "💖",
     bg: "bg-rose-500",
   },
   {
-    stat: "Top Genres",
+    stat: "Top Message Topics",
     unit: "",
-    text: "40% Sending Memes\n30% Deciding what to eat\n30% Nap enthusiast",
-    emoji: "📊",
+    text: "40% Sending Memes\n30% ADHD conversations\n30% COINCIDENCE! I THINK NOT!",
+    emoji: "💬",
     bg: "bg-pink-400",
   },
   {
-    stat: "87",
+    stat: "100000+",
     unit: "times",
-    text: "\"I'm not mad\" that actually meant \"I'm hungry\"",
-    emoji: "😤",
+    text: "\"🤣\" emojis \nYou couldn't get enough of it could ya rin.",
+    emoji: "🤣",
+    bg: "bg-red-400",
+  },
+  {
+    stat: "∞",
+    unit: "messages",
+    text: "that would get deleted if I tried to screenshot our chat history. \nI love that we can be so open with each other.",
+    emoji: "🤣",
     bg: "bg-red-400",
   },
   {
     stat: "Verdict",
     unit: "",
     text: "You're stuck with me.",
-    emoji: "⚖️",
+    emoji: "😂lol",
     bg: "bg-rose-600",
   },
 ];
@@ -37,44 +48,44 @@ export const wrappedSlides = [
 // ── Phase 3: Dopamine Compliments + Images ──
 export const dopaminePool = [
   {
-    image: "https://i.pinimg.com/736x/05/90/c0/0590c tried.jpg",
-    text: "I love your ability to find the exact wrong way to the highway every time.",
+    image: cutebear,
+    text: "I love your ability to find the exact way to make me laugh or feel happy.",
+  },
+  {
+    image: "https://media.tenor.com/qeWbKdDrhvUAAAAM/anime-gif-anime.gif",
+    text: "You look 12/10 even as a startled owl at 3 AM with hair long enough to strangle me from america.",
+  },
+  {
+    image: "https://c.tenor.com/8gjlJQQ8bk4AAAAd/tenor.gif",
+    text: "Keep indulging me with your presence (also 😏) and I'll keep being the most adorable garchu in your life.",
+  },
+  {
+    image: "https://media.tenor.com/BpXz5gXqYEYAAAAi/uma-musume-kitasan-black.gif",
+    text: "You're the reason I check my phone 420 times a day.",
   },
   {
     image: "",
-    text: "You look 10/10 even as a startled owl at 3 AM.",
+    text: "If you were a Pokemon, you'd be Legendary — uncatchable. i guess i have the master ball though.",
   },
   {
     image: "",
-    text: "Your laugh could end wars and start dance parties.",
+    text: "Your personality is like a perfectly balanced anime character — a little bit of chaos, a lot of heart, and always entertaining.",
   },
   {
-    image: "",
-    text: "You're the reason I check my phone 400 times a day.",
+    image: "https://media.tenor.com/M7-Ftr7tsz8AAAAM/dance.gif",
+    text: "You have the unique ability to make even the most mundane moments feel like a scene from a romantic comedy.",
   },
   {
-    image: "",
-    text: "If you were a Pokémon, you'd be Legendary tier — uncatchable.",
+    image: thumbsup2,
+    text: "",
   },
   {
-    image: "",
-    text: "Your cooking is either a 2 or a 10. No in-between. I love that.",
+    image: thumbsup,
+    text: "tits.",
   },
   {
-    image: "",
-    text: "You make even grocery shopping feel like an anime filler arc — weirdly fun.",
-  },
-  {
-    image: "",
-    text: "You give the best unsolicited fashion advice. Truly iconic.",
-  },
-  {
-    image: "",
-    text: "Your dramatic yawns deserve an Oscar nomination.",
-  },
-  {
-    image: "",
-    text: "You're the plot twist I never saw coming but always needed.",
+    image: "https://i.pinimg.com/originals/86/5a/df/865adfa9b4fb8bcfe50fab082d772c3a.gif",
+    text: "You're the violet i needed in my garden. I have reached peak cringe xD",
   },
   {
     image: "",

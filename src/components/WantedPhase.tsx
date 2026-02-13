@@ -19,7 +19,7 @@ export default function WantedPhase() {
           WANTED
         </h1>
         <p className="text-sm font-bold tracking-widest mb-4 text-gray-600">
-          DEAD OR ALIVE
+          REALLY BAD OR ALIVE
         </p>
 
         {/* Divider */}

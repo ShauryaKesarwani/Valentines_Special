@@ -12,6 +12,14 @@ interface Polaroid {
   y: number;
 }
 
+const resolveImageSrc = (src: string) => {
+  if (!src) return "";
+  if (src.startsWith("./") || src.startsWith("../")) {
+    return new URL(src, import.meta.url).href;
+  }
+  return src;
+};
+
 export default function DopaminePhase({ onComplete }: { onComplete: () => void }) {
   const [polaroids, setPolaroids] = useState<Polaroid[]>([]);
   const [clickCount, setClickCount] = useState(0);
@@ -98,7 +106,7 @@ export default function DopaminePhase({ onComplete }: { onComplete: () => void }
               <div className="w-full h-32 md:h-40 bg-gradient-to-br from-pink-200 to-rose-300 border-2 border-black mb-2 flex items-center justify-center">
                 {p.image ? (
                   <img
-                    src={p.image}
+                    src={resolveImageSrc(p.image)}
                     alt=""
                     className="w-full h-full object-cover"
                   />
