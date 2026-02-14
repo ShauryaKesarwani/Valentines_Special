@@ -85,7 +85,7 @@ export default function DopaminePhase({ onComplete }: { onComplete: () => void }
       </div>
 
       {/* Polaroid Pile */}
-      <div className="relative w-full max-w-lg h-[300px] md:h-[350px] flex items-center justify-center mb-8">
+      <div className="relative w-full max-w-2xl h-[350px] md:h-[450px] flex items-center justify-center mb-8">
         <AnimatePresence>
           {polaroids.map((p) => (
             <motion.div
@@ -99,11 +99,11 @@ export default function DopaminePhase({ onComplete }: { onComplete: () => void }
                 rotate: p.rotation,
               }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              className="polaroid absolute w-56 md:w-64 cursor-default"
+              className="polaroid absolute w-72 md:w-80 lg:w-96 cursor-default"
               style={{ zIndex: p.id }}
             >
               {/* Image placeholder */}
-              <div className="w-full h-32 md:h-40 bg-gradient-to-br from-pink-200 to-rose-300 border-2 border-black mb-2 flex items-center justify-center">
+              <div className="w-full h-44 md:h-56 lg:h-64 bg-gradient-to-br from-pink-200 to-rose-300 border-2 border-black mb-2 flex items-center justify-center">
                 {p.image ? (
                   <img
                     src={resolveImageSrc(p.image)}

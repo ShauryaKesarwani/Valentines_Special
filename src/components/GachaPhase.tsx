@@ -30,7 +30,7 @@ export default function GachaPhase({ onComplete }: { onComplete: () => void }) {
 
       setIsFlipping(true);
 
-      // GSAP 3D card flip
+      // GSAP 3D card flip - flip from back to front and stay on front
       const tl = gsap.timeline({
         onComplete: () => {
           setIsFlipping(false);
@@ -51,11 +51,6 @@ export default function GachaPhase({ onComplete }: { onComplete: () => void }) {
           rotateY: 180,
           duration: 0.6,
           ease: "power2.inOut",
-        })
-        .to(card, {
-          rotateY: 360,
-          duration: 0.4,
-          ease: "power2.out",
         })
         .to(card, {
           scale: pull.isUR ? 1.15 : 1,
@@ -136,23 +131,37 @@ export default function GachaPhase({ onComplete }: { onComplete: () => void }) {
         {currentPull ? (
           <div
             ref={cardRef}
-            className="gacha-card w-full h-full"
+            className="gacha-card w-full h-full relative"
             style={{ transformStyle: "preserve-3d" }}
           >
+            {/* Card Back (visible initially) */}
             <div
-              className={`w-full h-full flex flex-col items-center justify-center p-6 ${
-                currentPull.isUR
-                  ? "bg-gradient-to-br from-yellow-300 via-rose-400 to-purple-500 border-4 border-black"
-                  : "neo-card"
-              }`}
+              className="absolute inset-0 w-full h-full gacha-card-back border-4 border-black"
               style={{ backfaceVisibility: "hidden" }}
+            />
+            {/* Card Front */}
+            <div
+              className={`absolute inset-0 w-full h-full flex flex-col items-center justify-center p-6 border-4 border-black ${
+                currentPull.isUR
+                  ? "gacha-card-ur"
+                  : currentPull.stars === 4
+                  ? "gacha-card-4star"
+                  : "gacha-card-3star"
+              }`}
+              style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
             >
               {/* Stars */}
               <div className="flex gap-1 mb-3">
                 {Array.from({ length: currentPull.stars }).map((_, i) => (
                   <Star
                     key={i}
-                    className={`w-6 h-6 ${currentPull.isUR ? "text-yellow-200" : "text-yellow-500"}`}
+                    className={`w-6 h-6 ${
+                      currentPull.isUR
+                        ? "text-yellow-200"
+                        : currentPull.stars === 4
+                        ? "text-purple-300"
+                        : "text-yellow-500"
+                    }`}
                     fill="currentColor"
                   />
                 ))}
@@ -164,7 +173,11 @@ export default function GachaPhase({ onComplete }: { onComplete: () => void }) {
               {/* Name */}
               <h3
                 className={`manga-title text-2xl text-center mb-2 ${
-                  currentPull.isUR ? "text-white" : "text-gray-800"
+                  currentPull.isUR
+                    ? "text-white"
+                    : currentPull.stars === 4
+                    ? "text-purple-100"
+                    : "text-gray-800"
                 }`}
               >
                 {currentPull.name}
